@@ -6,7 +6,8 @@ from concurrent.futures import ThreadPoolExecutor
 input_path = 'input'
 output_path = 'out'
 image_quality = 75
-max_workers = 16  # Número de threads
+max_workers = os.cpu_count()
+
 
 def process_image(file):
     if file.endswith('.jpg') or file.endswith('.png'):
